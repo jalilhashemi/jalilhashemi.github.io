@@ -119,11 +119,20 @@ h2 {
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.2s ease, opacity 0.2s ease;
+  text-decoration: none; /* ensure no underline */
+  color: #fff; /* icon color */
 }
 
 .header .social-circle:hover {
   transform: translateY(-4px);
   opacity: 0.9;
+}
+
+.header .social-circle i {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header .social-circle a {
@@ -199,16 +208,12 @@ h2 {
 
   <!-- Social icons as circles -->
   <div class="social-container">
-    <div class="social-circle">
-      <a href="mailto:jalil.hashemi@bkb.ch" target="_blank">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-    </div>
-    <div class="social-circle">
-      <a href="https://www.linkedin.com/in/jalilhashemi/" target="_blank">
+    <a href="mailto:jalil.hashemi@bkb.ch" target="_blank" class="social-circle">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+      <a href="https://www.linkedin.com/in/jalilhashemi/" target="_blank" class="social-circle">
         <i class="fa-brands fa-linkedin"></i>
       </a>
-    </div>
   </div>
 </div>
 
