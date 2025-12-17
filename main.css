@@ -1,6 +1,6 @@
 :root {
     --bg: #f6f3ef;
-    --title: #D6E3F3;
+    --hover: #D6E3F3;
     --accent: #196BB4;
     --text: #2b2b2b;
 }
@@ -14,7 +14,8 @@ body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -22,7 +23,7 @@ header {
     background: url('header-bg.png') center/cover no-repeat;
     padding: 100px 24px 120px 24px;
     text-align: center;
-    color: var(--title);
+    color: var(--bg);
     border-radius: 0 0 20px 20px;
 }
 
@@ -51,7 +52,7 @@ header::before {
     left: 16px;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--title);
+    color: var(--bg);
     z-index: 1;
 }
 
@@ -74,7 +75,7 @@ h2 {
     font-size: 1.3rem;
     font-weight: 400;
     margin: 0;
-    color: var(--title);
+    color: var(--bg);
 }
 
 .social-container {
@@ -106,7 +107,7 @@ h2 {
 }
 
 i:hover {
-    color: var(--title);
+    color: var(--hover);
     opacity: 0.8;
 }
 
@@ -126,12 +127,61 @@ i:hover {
     justify-content: center;
 }
 
-.about {
-    max-width: 520px;
-    margin: 60px auto 0;
-    font-size: 1.05rem;
-    text-align: center;
+.iceberg-container {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
 }
+
+.iceberg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.iceberg-container .certificate{
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.iceberg-container .certificate:hover {
+    transform: scale(1.2);
+}
+
+.iceberg-text {
+    font-family: lato, sans-serif;
+    font-size: 0.5rem;
+    fill: var(--text);
+}
+
+.iceberg-text .text-bold{
+    font-size: 0.3rem;
+    font-weight: 700;
+}
+
+.iceberg-text .text-thin{
+    font-size: 0.25rem;
+    font-weight: 100;
+}
+
+.site-footer {
+    width: 100%;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.site-footer .copyright {
+    font-family: Lato, sans-serif;
+    font-weight: 100;
+}
+
 
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }
