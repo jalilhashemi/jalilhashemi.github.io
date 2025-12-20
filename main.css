@@ -16,6 +16,140 @@ html, body {
     font-family: Lato, sans-serif;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    overflow: visible;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    /*z-index: 1;*/
+
+
+    /*height: 60px;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+    /*padding: 0 20px;*/
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--bg);
+    font-size: 0.9rem;
+    /*position: absolute;*/
+    /*    top: 20px;*/
+    /*    left: 20px;*/
+        font-weight: 500;
+        /*z-index: 1;*/
+}
+
+/* Hamburger */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 3000;
+    /*!*width: 30px;*!*/
+    /*height: 24px;*/
+    justify-content: space-between;
+    position: relative;
+    /*display: flex;*/
+    padding: 6px;
+    /*margin-right: 8px;*/
+
+
+
+
+
+}
+
+.burger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.burger span {
+    height: 2px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.3s;
+    z-index: 9000;
+}
+
+/* Menu */
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang {
+    color: #bbb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.lang:hover {
+    color: #fff;
+}
+
+.lang.active {
+    color: #ffcc00;
+}
+
+.separator {
+    color: #777;
+}
+
+
+
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* Language switcher */
+#language-switcher {
+    /*padding: 5px;*/
+}
+
+#language-switcher {
+    display: inline-block;
+
+}
+
+
+
 header {
     height: 100vh;
     display: flex;
@@ -27,15 +161,6 @@ header {
 .header-content {
     text-align: left;
     color: var(--bg);
-    z-index: 1;
-}
-
-.top-left {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
     z-index: 1;
 }
 
@@ -205,6 +330,19 @@ footer .copyright {
     font-weight: 100;
 }
 
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
 @media (max-width: 1200px) {
     .header-bg {
         background-image:
@@ -268,4 +406,36 @@ footer .copyright {
     .content .role {
         margin-bottom: 24px;
     }
+    .burger { display: flex; }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        /*width: 200px;*/
+        height: calc(100% - 60px);
+        background-color: rgba(0,0,0,0.8);
+        flex-direction: column;
+        align-items: center;
+        /*transition: 0.3s;*/
+        z-index: 5000;
+
+        /*height: 100vh;*/
+        width: 260px;
+        /*justify-content: center;*/
+        gap: 30px;
+        transition: right 0.3s ease;
+    }
+
+    .nav-links.active { right: 0; }
+
+    .lang-switch {
+        justify-content: center;
+    }
+
+    #first-line{
+        margin-top: 30px;
+    }
+
+    /*.nav-menu li { margin: 20px 0; }*/
 }

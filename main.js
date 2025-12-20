@@ -20,3 +20,37 @@ document.addEventListener("DOMContentLoaded", () => {
         type();
     }, 500);
 });
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle("active");
+
+});
+
+// Optional: close menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+
+// Language switcher example
+const languageSwitcher = document.getElementById('language-switcher');
+languageSwitcher.addEventListener('change', (e) => {
+    alert('Switching language to: ' + e.target.value);
+});
+
+document.querySelectorAll(".lang").forEach(lang => {
+    lang.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        document.querySelectorAll(".lang").forEach(l => l.classList.remove("active"));
+        lang.classList.add("active");
+
+        console.log("Language switched to:", lang.dataset.lang);
+    });
+});
