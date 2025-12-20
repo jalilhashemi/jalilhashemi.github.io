@@ -14,14 +14,12 @@
 
 html, body {
     font-family: Lato, sans-serif;
-    /*line-height: 1.7;*/
 }
 
 header {
     height: 100vh;
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
     position: relative;
     padding: 0 250px;
 }
@@ -109,7 +107,6 @@ header h1 {
     font-size: 1.2rem;
 }
 
-/*Education & what i do*/
 .content ul li {
     font-size: 1.2rem;
     margin-bottom: 16px;
@@ -119,7 +116,6 @@ header h1 {
     color: var(--text);
 }
 
-/*bullet points*/
 .content ul li::before {
     content: "";
     position: absolute;
@@ -132,18 +128,15 @@ header h1 {
     background-size: contain;
 }
 
-/*bullet points*/
 .content ul {
     list-style: none;
     padding-left: 0;
 }
 
-/*Experience*/
 .content .role {
     margin-bottom: 32px;
 }
 
-/*Experience*/
 .content .role-title {
     font-weight: 600;
     font-size: 1.2rem;
@@ -158,14 +151,12 @@ header h1 {
     color: var(--text);
 }
 
-/*Experience*/
 .content .role-desc {
     font-size: 1rem;
     line-height: 1.6;
     color: var(--subtext);
 }
 
-/*Certifications*/
 section a {
     font-size: 1.2rem;
     color: var(--subtext);
@@ -214,7 +205,6 @@ footer .copyright {
     font-weight: 100;
 }
 
-/* Tablet */
 @media (max-width: 1200px) {
     .header-bg {
         background-image:
@@ -239,7 +229,6 @@ footer .copyright {
     }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .header-bg {
         position: absolute;
@@ -248,7 +237,7 @@ footer .copyright {
                 url("images/header-bg-mobile.webp");
     }
     .content {
-        padding: 80px 20px;
+        padding: 80px 20px 10px 20px;
         border-radius: 20px 20px 0 0;
     }
 
@@ -261,22 +250,19 @@ footer .copyright {
 
     }
     header h1 {
+        font-size: 2.5rem;
         line-height: 1.2;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     #typing-text {
         font-size: 1.5rem;
         font-weight: 700;
         opacity: 0.85;
-
+        border-right: 0 solid var(--bg);
         white-space: normal;   /* allow wrapping */
         word-break: break-word;
         text-align: left;
-    }
-
-    #typing-text::after {
-        display: inline; /* cursor follows text */
     }
 
     .content .role {

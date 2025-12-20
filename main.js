@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (index < text.length) {
                 element.textContent += text.charAt(index);
                 index++;
-                setTimeout(type, 100); // typing speed (ms)
+                setTimeout(type, 80);
             }
         }
 
         type();
-    }, 2000);
+    }, 500);
 });
