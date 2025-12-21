@@ -83,3 +83,22 @@ document.querySelectorAll(".lang").forEach(lang => {
         console.log("Language switched to:", lang.dataset.lang);
     });
 });
+
+emailjs.init("dEJTQHjphxVX2xMsB");
+
+// Get the form element
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    emailjs.sendForm("service_3q75bg9", "template_qviaa2a", this)
+        .then(function() {
+            alert("Message sent successfully!");
+            contactForm.reset(); // Clear the form
+        }, function(error) {
+            alert("Failed to send message.");
+            console.log(error);
+        });
+});
+

@@ -137,6 +137,21 @@
       </div>
     </section>
 
+    <section class="form-container">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <label for="from_email">Your Email</label>
+        <input type="email" name="from_email" id="from_email" placeholder="you@example.com" required>
+
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit">Send</button>
+<!--        <p>Message sent!</p>-->
+
+      </form>
+    </section>
+
     <footer>
       <div class="footer-social-container">
         <a href="https://www.linkedin.com/in/jalilhashemi/" target="_blank" class="footer-social">
@@ -156,5 +171,7 @@
     </footer>
   </main>
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
   </body>
 </html>

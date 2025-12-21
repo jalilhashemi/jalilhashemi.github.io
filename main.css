@@ -291,6 +291,68 @@ section a {
 section a:hover{
     color: var(--text);
 }
+/*.form-container {*/
+/*    max-width: 400px;*/
+/*    margin: 50px auto;*/
+/*    padding: 20px;*/
+/*    background-color: #fff;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 4px 10px rgba(0,0,0,0.1);*/
+/*}*/
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 24px;   /* Space between elements */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--accent);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    /*background-color: var(--accent);*/
+    color: var(--bg);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/*!* Optional: small spacing under button *!*/
+/*button + p {*/
+/*    margin-top: 10px;*/
+/*    text-align: center;*/
+/*    color: green;*/
+/*}*/
 
 footer {
     width: 100%;
