@@ -52,8 +52,9 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     });
 });
 
+// block scrolling when menu open
 const navbar = document.querySelector(".navbar");
-const hero = document.getElementById("hero");
+const hero = document.getElementById("header-container");
 
 const heroHeight = hero.offsetHeight;
 
@@ -66,7 +67,7 @@ window.addEventListener("scroll", () => {
 });
 
 
-// Language switcher example
+// Language switcher
 const languageSwitcher = document.getElementById('language-switcher');
 languageSwitcher.addEventListener('change', (e) => {
     alert('Switching language to: ' + e.target.value);

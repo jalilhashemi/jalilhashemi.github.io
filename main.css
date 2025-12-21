@@ -25,13 +25,19 @@ html, body {
     position: fixed;
     width: 100%;
     background-color: transparent;
+    height: 60px;
+    /*min-height: 60px;*/
+    /*max-height: 60px;*/
     z-index: 3000;
 }
 
 .navbar.scrolled {
     background: var(--accent);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
+.navbar * {
+    box-sizing: border-box;
 }
 
 /*.navbar.scrolled .logo,*/
@@ -88,7 +94,6 @@ html, body {
     z-index: 1000;
 }
 
-
 .overlay.active {
     opacity: 1;
     pointer-events: all;
@@ -98,8 +103,6 @@ html, body {
     display: none;
 }
 
-
-/* Menu */
 .nav-links {
     display: flex;
     list-style: none;
