@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
 });
 
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+const hamburger = document.getElementById('burger');
+const navMenu = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
