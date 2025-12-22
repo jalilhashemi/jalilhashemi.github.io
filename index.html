@@ -15,41 +15,44 @@
   </head>
 
   <body>
-  <nav class="navbar">
-    <div class="logo">HASHemi jALIL</div>
-      <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <ul class="nav-links" id="nav-links">
-        <li id="first-line"><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-
-        <li class="lang-switch">
-          <a href="#" class="lang" data-lang="de">DE</a>
-          <span class="separator">|</span>
-          <a href="#" class="lang active" data-lang="en">EN</a>
-        </li>
-      </ul>
-  </nav>
-  <div class="overlay" id="overlay"></div>
 
   <header id="header-container">
       <div class="header-bg"></div>
-      <div class="header-content">
+      <div class="header-content" id="home">
 <!--        <h1>Turning strategy into value through scaled Agile</h1>-->
         <h1>Turning strategy into value at scale</h1>
         <p id="typing-text" data-text="Calm leadership for complex Agile delivery"></p>
       </div>
     </header>
 
+  <nav class="navbar">
+    <div class="logo">HASHemi jALIL</div>
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li id="first-line"><a href="#header-container" class="nav-item active">Home</a></li>
+      <li><a href="#about" class="nav-item">About</a></li>
+      <li><a href="#experience" class="nav-item">Experience</a></li>
+      <li><a href="#certifications" class="nav-item">Certifications</a></li>
+      <li><a href="#education" class="nav-item">Education</a></li>
+      <li><a href="#contact" class="nav-item">Contact</a></li>
+
+      <li class="lang-switch">
+        <a href="#" class="lang" data-lang="de">DE</a>
+        <span class="separator">|</span>
+        <a href="#" class="lang active" data-lang="en">EN</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
   <main class="content">
 
-    <section>
+    <section id="about">
       <p class="content-text">
         I am a Release Train Engineer helping organizations achieve alignment, flow, and predictable delivery in complex Agile environments. I translate strategy into measurable outcomes by enabling people, systems, and leadership to work effectively together.      </p>
       <p class="content-text">
@@ -72,7 +75,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="experience">
       <h2>Experience</h2>
       <div class="role">
         <div class="role-title">Release Train Engineer (BKB)</div>
@@ -100,7 +103,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="certifications">
       <h2>Certifications</h2>
       <ul>
         <li>
@@ -121,7 +124,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="education">
       <h2>Education</h2>
       <div class="role">
         <div class="role-title">CAS Team Dynamics – Process-Oriented Leadership and Consulting</div>
@@ -138,7 +141,7 @@
       </div>
     </section>
 
-    <section class="form-container">
+    <section class="form-container" id="contact">
       <h2>Contact Me</h2>
       <form id="contact-form" novalidate>
 
@@ -171,7 +174,7 @@
     </footer>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="main.js"></script>
-
+  <script src="js/main.js"></script>
+  <script src="js/header.js"></script>
   </body>
 </html>
