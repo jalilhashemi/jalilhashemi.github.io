@@ -344,6 +344,14 @@ label.required::after {
     margin-bottom: 24px;
 }
 
+
+#captcha-error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: block;
+}
+
 input,
 textarea {
     font-size: 1rem;

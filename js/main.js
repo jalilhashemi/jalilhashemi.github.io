@@ -76,46 +76,63 @@
     const contactForm = document.getElementById("contact-form");
     const hint = document.getElementById("form-hint");
     const emailError = document.getElementById("email-error");
+    const captchaError = document.getElementById("captcha-error");
     const submitBtn = document.getElementById("submit-btn");
 
-    contactForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // stop default submission
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
         if (submitBtn.disabled) return;
 
         let isValid = true;
         let firstEmpty = null;
 
+        // Reset UI
         emailError.textContent = "";
+        captchaError.textContent = "";
         hint.style.display = "none";
 
         this.querySelectorAll("[required]").forEach(input => {
             input.style.borderColor = "#ccc";
+
+            // Required check
             if (!input.value.trim()) {
                 isValid = false;
                 input.style.borderColor = "red";
                 if (!firstEmpty) firstEmpty = input;
+                return;
             }
 
-        if (input.type === "email" && input.value.trim()) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(input.value.trim())) {
-                isValid = false;
-                input.style.borderColor = "red";
-                if (!firstEmpty) firstEmpty = input;
-
-                emailError.textContent = "Please enter a valid email address";
-                if (!firstEmpty) firstEmpty = input;
+            // Email format check
+            if (input.type === "email") {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(input.value.trim())) {
+                    isValid = false;
+                    input.style.borderColor = "red";
+                    emailError.textContent = "Please enter a valid email address";
+                    if (!firstEmpty) firstEmpty = input;
+                }
             }
-        }
-    });
+        });
 
+        // Stop if form invalid
         if (!isValid) {
             hint.style.display = "block";
-            if (firstEmpty) firstEmpty.focus();
+            firstEmpty?.focus();
             return;
         }
 
+        // CAPTCHA validation
+        if (typeof grecaptcha !== "undefined") {
+            const captchaResponse = grecaptcha.getResponse();
+
+            if (!captchaResponse) {
+                captchaError.textContent = "Please verify that you are not a robot.";
+                return;
+            }
+        }
+
+        // Lock button
         submitBtn.disabled = true;
         submitBtn.textContent = "Sending…";
 
@@ -123,12 +140,23 @@
             .then(() => {
                 alert("Message sent successfully!");
                 contactForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Send";
+
+                // ✅ Reset CAPTCHA AFTER success
+                if (typeof grecaptcha !== "undefined") {
+                    grecaptcha.reset();
+                }
             })
             .catch(err => {
                 alert("Failed to send message.");
                 console.error(err);
+
+                // Optional: reset CAPTCHA on failure too
+                if (typeof grecaptcha !== "undefined") {
+                    grecaptcha.reset();
+                }
+            })
+            .finally(() => {
+                // Always restore button
                 submitBtn.disabled = false;
                 submitBtn.textContent = "Send";
             });
